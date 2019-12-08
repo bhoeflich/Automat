@@ -161,10 +161,13 @@ do{
 } while (checkifFinal( actualState));
     cout<<"Machine is in finale state..." <<endl;*/
 bool checkfinalState(int input){
-    bool final = true;
+    bool final = false;
     
     for(int const &p: finalState){
-        final &= (actualState == p);
+        final = (input == p);
+        if(final == true){
+            break;
+        }
     }
     return final;
 }
@@ -180,7 +183,7 @@ void recusiveAutomat(){
          }
      cout<< endl;
     
-     if (){
+     if (checkfinalState(actualState)){
          cout<<"ruediger has reached final state..."<<endl;
      }else{
          cout<<"ruediger couldn't reach final state... " <<endl;
