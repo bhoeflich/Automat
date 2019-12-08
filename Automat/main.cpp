@@ -17,7 +17,7 @@ using namespace std;
     
 int main(){
     actualState = startState;
-    cout<< "The machine is currently in state: " <<actualState <<endl;
+    cout<< "The Ruediger is currently in state: " <<actualState <<endl;
     cout<< "====================================" <<endl <<endl;
     
     recusiveAutomat();

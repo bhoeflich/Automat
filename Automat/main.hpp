@@ -111,16 +111,16 @@ void changeState(char userInput){
 }
 
 //checks if automat is in final state
-bool checkfinalState(int input){
-    bool final = false;
+bool checkFinalState(int input){
+    bool isFinalState = false;
     
     for(int const &p: finalState){
-        final = (input == p);
-        if(final == true){
+        isFinalState = (input == p);
+        if(isFinalState == true){
             break;
         }
     }
-    return final;
+    return isFinalState;
 }
 
 //automat
@@ -130,7 +130,7 @@ bool checkfinalState(int input){
 //else set automat to start, runs it recusive again
 void recusiveAutomat(){
    
-    string validInput = getdigitInput("To change state, type in sequence of 0 or 1!... ");
+    string validInput = getdigitInput("To change ruedigers state, type in sequence of 0 or 1!... ");
          
      for (const char &d: validInput){
              changeState(d);
@@ -138,8 +138,9 @@ void recusiveAutomat(){
          }
      cout<< endl;
     
-     if (checkfinalState(actualState)){
+     if (checkFinalState(actualState)){
          cout<<"ruediger has reached final state..."<<endl;
+         cout<<"ruediger is very happy...." <<endl;
      }else{
          cout<<"ruediger couldn't reach final state... " <<endl;
          actualState = startState;
